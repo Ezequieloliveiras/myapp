@@ -1,6 +1,6 @@
 import Container from '@mui/material/Container'
 import Header from "../partials/Header"
-import { styled } from '@mui/system'
+import { styled } from '@mui/material/styles';
 
 
 const StyledContainer = styled(Container)(({ theme }) => ({

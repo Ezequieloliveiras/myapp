@@ -6,6 +6,8 @@ import {
 } from 'react-router-dom'
 
 import TemplateDefault from './template/Default'
+
+import Customers from './pages/Customers'
 import Home from './pages/Home'
 
 
@@ -14,6 +16,7 @@ const App = () => {
     <TemplateDefault>
       <Router >
         <Routes>
+        <Route path='/customers' element={<Customers />} />
           <Route path='/' element={<Home />} />
         </Routes>
       </Router >
