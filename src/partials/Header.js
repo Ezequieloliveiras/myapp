@@ -6,8 +6,7 @@ import {
     IconButton,
 } from '@mui/material'
 
-import MenuIcon from '@mui/icons-material/Menu';
-import { red } from '@mui/material/colors';
+import MenuIcon from '@mui/icons-material/Menu'
 
 const Header = () => {
 
