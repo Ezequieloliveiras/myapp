@@ -5,6 +5,7 @@ import Grid from '@mui/material/Grid'
 
 import CustomerCard from '../components/CustomerCard'
 
+
 const Customers = () => {
 
     const [customers, setCustomers] = useState([])
@@ -25,7 +26,7 @@ const Customers = () => {
             <Grid container>
                 {
                     customers.map(item => (
-                        <Grid item xs={12} md={4}>
+                        <Grid item xs={12} md={4} sx={{padding: 5}} key={item.id}>
                             <CustomerCard
                                 name={item.first_name}
                                 lastname={item.last_name}

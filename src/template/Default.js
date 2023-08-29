@@ -15,7 +15,7 @@ const Default = ({ children }) => {
     return (
         <>
             <Header />
-            <StyledContainer >
+            <StyledContainer style={{paddingLeft:"0px",paddingRight:"0px"}}>
                 {children}
             </StyledContainer>
         </>
