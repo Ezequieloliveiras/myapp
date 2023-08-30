@@ -6,8 +6,7 @@ import { styled } from '@mui/material/styles';
 const StyledContainer = styled(Container)(({ theme }) => ({
     paddingTop: theme.spacing(3), // Padding superior
     paddingBottom: theme.spacing(3), // Padding inferior
-    paddingLeft: 0, // Padding esquerdo
-    paddingRight: 0, // Padding direito
+ 
 }))
 
 const Default = ({ children }) => {
