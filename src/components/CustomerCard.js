@@ -1,14 +1,16 @@
-import * as React from 'react'
+import * as React from "react"
 
+import {
+    Card,
+    CardHeader,
+    CardActions,
+    Avatar,
+    IconButton,
+} from "@mui/material"
 
-import Card from '@mui/material/Card'
-import CardHeader from '@mui/material/CardHeader'
-import CardActions from '@mui/material/CardActions'
-import Avatar from '@mui/material/Avatar'
-import IconButton from '@mui/material/IconButton'
-import ShareIcon from '@mui/icons-material/Share'
+import ShareIcon from "@mui/icons-material/Share"
 
-import FavoriteIcon from '@mui/icons-material/Favorite'
+import FavoriteIcon from "@mui/icons-material/Favorite"
 
 
 
@@ -20,7 +22,7 @@ const CustomerCard = ({
 }) => {
 
     return (
-        <Card sx={{maxWidth: 345}}>
+        <Card sx={{ maxWidth: 345 }}>
             <CardHeader
                 avatar={
                     <Avatar aria-label="recipe" src={avatar}>
@@ -34,7 +36,7 @@ const CustomerCard = ({
             <CardActions disableSpacing>
                 <IconButton aria-label="add to favorites">
                     <FavoriteIcon />
-                </IconButton> 
+                </IconButton>
                 <ShareIcon />
             </CardActions>
         </Card>

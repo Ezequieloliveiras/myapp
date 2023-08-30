@@ -7,8 +7,8 @@ import Page from '../src/template/Page' // Importando o componente Page
 
 const App = () => {
   return (
-    <TemplateDefault>
-      <Router>
+    <Router>
+      <TemplateDefault>
         <Routes>
           {/* Usando o componente Page para renderizar as páginas */}
           <Route
@@ -20,8 +20,8 @@ const App = () => {
             element={<Page title="Home" component={Home} />} // Conectando o componente Home
           />
         </Routes>
-      </Router>
-    </TemplateDefault>
+      </TemplateDefault>
+    </Router>
   )
 }
 
