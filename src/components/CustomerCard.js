@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
 
 import {
     Card,
@@ -8,6 +8,7 @@ import {
     IconButton,
 } from "@mui/material"
 
+/*import { useNavigate } from 'react-router-dom'*/
 
 import EditIcon from '@mui/icons-material/Edit'
 import DeleteIcon from '@mui/icons-material/Delete'
@@ -21,6 +22,7 @@ const CustomerCard = ({
     email,
     avatar,
     onRemoveCustomer,
+    onEditCustomer,
 }) => {
 
     const [openModal, setOpenModal] = useState(false)
@@ -38,32 +40,36 @@ const CustomerCard = ({
         handleToggleOpenModal()
     }
 
+    const handleEditCustomer = id => {
+        onEditCustomer(id)
+    }
+
     return (
 
         <>  <Card sx={{ maxWidth: 345 }}>
-                <CardHeader
-                    avatar={
-                        <Avatar aria-label="recipe" src={avatar}>
-                            R
-                        </Avatar>
-                    }
+            <CardHeader
+                avatar={
+                    <Avatar aria-label="recipe" src={avatar}>
+                        R
+                    </Avatar>
+                }
 
-                    title={`${name} ${lastname}`}
-                    subheader={email}
-                />
-                <CardActions disableSpacing>
-                    <IconButton aria-label="editar cadastro">
-                        <EditIcon />
-                    </IconButton>
-                    <IconButton aria-label="remover cadastro" onClick={handleRemoveCustomer}>
-                        <DeleteIcon />
-                    </IconButton>
-                </CardActions>
-            </Card>
-            <ModalConfirm 
+                title={`${name} ${lastname}`}
+                subheader={email}
+            />
+            <CardActions disableSpacing>
+                <IconButton aria-label="editar cadastro" onClick={() => handleEditCustomer(id)}>
+                    <EditIcon />
+                </IconButton>
+                <IconButton aria-label="remover cadastro" onClick={handleRemoveCustomer}>
+                    <DeleteIcon />
+                </IconButton>
+            </CardActions>
+        </Card>
+            <ModalConfirm
                 open={openModal}
                 onClose={handleToggleOpenModal}
-                onConfirm={() => handleConfirmModal (id)}
+                onConfirm={() => handleConfirmModal(id)}
                 title='Deseja realmente excluir esse cadastro?'
                 message='Ao confirmar não será possível excluir esta operação.'
             />

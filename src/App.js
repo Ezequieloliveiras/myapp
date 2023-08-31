@@ -5,6 +5,7 @@ import CustomersList from './pages/customers/List'
 import Home from './pages/Home'
 import Page from '../src/template/Page' // Importando o componente Page
 import CustomersRegister from './pages/customers/Register'
+import CustomersEdit from './pages/customers/Edit'
 
 
 const App = () => {
@@ -12,6 +13,10 @@ const App = () => {
     <Router>
       <TemplateDefault>
         <Routes>
+          <Route
+            path='/customers/edit/:id/'
+            element={<Page title="Editar Cliente" component={CustomersEdit} />} // Conectando o componente Home
+          />
           {/* Usando o componente Page para renderizar as páginas */}
           <Route
             path='/customers/add'
