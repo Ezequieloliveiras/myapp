@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, {useState} from "react"
 
 import {
     Card,
@@ -10,9 +10,9 @@ import {
 
 
 import EditIcon from '@mui/icons-material/Edit'
-import DeleteIcon from '@mui/icons-material/Delete';
+import DeleteIcon from '@mui/icons-material/Delete'
 
-
+import ModalConfirm from "./ModalConfirm"
 
 const CustomerCard = ({
     name,
@@ -21,27 +21,51 @@ const CustomerCard = ({
     avatar,
 }) => {
 
-    return (
-        <Card sx={{ maxWidth: 345 }}>
-            <CardHeader
-                avatar={
-                    <Avatar aria-label="recipe" src={avatar}>
-                        R
-                    </Avatar>
-                }
+    const [openModal, setOpenModal] = useState(false)
 
-                title={`${name} ${lastname}`}
-                subheader={email}
+    const handleToggleOpenModal = () => {
+        setOpenModal(!openModal)
+    }
+
+    const handleConfirmModal = () => {
+        alert('ok')
+    }
+
+    const handleRemoveCustomer = () => {
+        handleToggleOpenModal()
+    }
+
+    return (
+
+        <>  <Card sx={{ maxWidth: 345 }}>
+                <CardHeader
+                    avatar={
+                        <Avatar aria-label="recipe" src={avatar}>
+                            R
+                        </Avatar>
+                    }
+
+                    title={`${name} ${lastname}`}
+                    subheader={email}
+                />
+                <CardActions disableSpacing>
+                    <IconButton aria-label="editar cadastro">
+                        <EditIcon />
+                    </IconButton>
+                    <IconButton aria-label="remover cadastro" onClick={handleRemoveCustomer}>
+                        <DeleteIcon />
+                    </IconButton>
+                </CardActions>
+            </Card>
+            <ModalConfirm 
+                open={openModal}
+                onClose={handleToggleOpenModal}
+                onConfirm={handleConfirmModal}
+                title='Deseja realmente excluir esse cadastro?'
+                message='Ao confirmar não será possível excluir esta operação.'
             />
-            <CardActions disableSpacing>
-                <IconButton aria-label="editar cadastro">
-                    <EditIcon />
-                </IconButton>
-                <IconButton aria-label="remover cadastro">
-                <DeleteIcon />
-                </IconButton>
-            </CardActions>
-        </Card>
+        </>
+
     )
 }
 
