@@ -8,9 +8,9 @@ import {
     IconButton,
 } from "@mui/material"
 
-import ShareIcon from "@mui/icons-material/Share"
 
-import FavoriteIcon from "@mui/icons-material/Favorite"
+import EditIcon from '@mui/icons-material/Edit'
+import DeleteIcon from '@mui/icons-material/Delete';
 
 
 
@@ -34,10 +34,12 @@ const CustomerCard = ({
                 subheader={email}
             />
             <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
-                    <FavoriteIcon />
+                <IconButton aria-label="editar cadastro">
+                    <EditIcon />
                 </IconButton>
-                <ShareIcon />
+                <IconButton aria-label="remover cadastro">
+                <DeleteIcon />
+                </IconButton>
             </CardActions>
         </Card>
     )
