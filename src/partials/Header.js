@@ -16,13 +16,14 @@ import {
 
 import { useNavigate } from 'react-router-dom'
 
+import PersonIcon from '@mui/icons-material/Person';
 import MenuIcon from '@mui/icons-material/Menu'
 import HomeIcon from '@mui/icons-material/Home';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 
 const Header = () => {
-    const [menuOpen, setMenuOpen] = useState(false)
     const navigate = useNavigate()
+    const [menuOpen, setMenuOpen] = useState(false)
 
 
     const handleToggleMenu = () => {
@@ -61,11 +62,19 @@ const Header = () => {
                         </ListItemIcon>
                         <ListItemText primary="Home">Home</ListItemText>
                     </ListItem>
-                    <ListItem button onClick={() => handleMenuClick('/customers')}>
+
+                    <ListItem button onClick={() => handleMenuClick('/customers/add')}>
                         <ListItemIcon>
                             <PersonAddIcon />
                         </ListItemIcon>
                         <ListItemText primary="Cadastro de Clientes">Cadastro de Clientes</ListItemText>
+                    </ListItem>
+
+                    <ListItem button onClick={() => handleMenuClick('/customers')}>
+                        <ListItemIcon>
+                            <PersonIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Lista de Clientes">Lista de Clientes</ListItemText>
                     </ListItem>
                 </List>
             </Drawer>
